@@ -1,0 +1,79 @@
+<div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col-xl-12 order-xl-1">
+        <div class="card  shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">New Utilisateur</h3>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+  
+              <h6 class="heading-small text-muted mb-4"></h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                            <label class="form-control-label">Cin</label>
+                            <input type="text"  class="form-control form-control-alternative" placeholder="Cin" formControlName="cin">
+                          </div>
+                        </div>
+
+                        <div class="col">
+                          <div class="form-group">
+                            <label class="form-control-label">Nom</label>
+                            <input type="text"  class="form-control form-control-alternative" placeholder="Nom" formControlName="nom">
+                          </div>
+                        </div>
+                    </div>
+                   
+                    
+                      <div class="form-group">
+                        <label class="form-control-label">Prenom</label>
+                        <input type="text"  class="form-control form-control-alternative" placeholder="Prenom" formControlName="prenom">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label">Email</label>
+                        <input type="text"  class="form-control form-control-alternative" placeholder="Email" formControlName="email">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label">Telephone</label>
+                        <input type="text"  class="form-control form-control-alternative" placeholder="Telephone" formControlName="telephone">
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label">Adresse</label>
+                        <input type="text"  class="form-control form-control-alternative" placeholder="Adresse" formControlName="adresse">
+                      </div>
+                      <div class="form-group">
+                        <select formControlName="Groupe" class="form-control" name=Groupe>
+                          <option *ngFor="let groupe of Groupes" [ngValue]="groupe">{{groupe.nom}}</option>
+                        </select>
+                      </div>
+                      
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-md-12">
+  
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary pull-right" [disabled]="!clientForm.valid">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

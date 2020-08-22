@@ -1,0 +1,24 @@
+<h1>list Roles</h1>
+
+<table  class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let role of roles">
+            <td>{{role.id}}</td>
+            <td>{{role.nom}}</td>
+            <td>
+                <li class="btn btn-danger"(click)="deleteRole(role)">Delete</li>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+</table>
+

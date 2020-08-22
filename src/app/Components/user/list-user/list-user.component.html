@@ -1,0 +1,38 @@
+
+<h1>list-user</h1>
+
+<table  class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cin</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Adresse</th>
+            <th>Telephone</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.cin}}</td>
+            <td>{{user.nom}}</td>
+            <td>{{user.prenom}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.adresse}}</td>
+            <td>{{user.telephone}}</td>
+            <td *ngIf="user.idRoleNavigation != undefined">{{user.idRoleNavigation.nom}}</td>
+            <td *ngIf="user.idRoleNavigation == undefined"></td>
+            <td>
+                <li class="btn btn-danger" (click)="deleteUser(user)">Delete</li>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+</table>
+
