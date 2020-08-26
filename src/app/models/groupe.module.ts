@@ -5,6 +5,7 @@ export class Groupe {
     id: number;
     nom: string;
     idUserNavigation: Utilisateur;
+    idUser: number;
     client: Client[];
     constructor(){ }
 }

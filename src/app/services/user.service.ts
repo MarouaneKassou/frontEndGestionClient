@@ -34,4 +34,7 @@ export class UserService {
   getByKeyword(keyword: string){
     return this.http.get<Utilisateur[]>(this.url+'/Utilisateurs/search/'+keyword);
   }
+  getUserByNomAndPrenom(nom:string , prenom:string){
+    return this.http.get<any>(this.url+'/Utilisateurs/getUserByNomAndPrenom/'+nom+'/'+prenom);
+  }
 }

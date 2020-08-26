@@ -9,13 +9,14 @@ import { Client } from '../models/client.module';
 export class ClientService {
 
   constructor(private http: HttpClient) { }
-  url = "https://localhost:44388/api"
+  url = "https://localhost:44388/api";
   getClients(): Observable<Client[]>{
     return this.http.get<Client[]>(this.url+'/Clients')
   }
 
   addClient(client:Client){
-    return this.http.post<any>(this.url+'/Clients',client);
+    alert(JSON.stringify(client));
+    return this.http.post<Client>(this.url+'/Clients',client);
   }
   
   getClientById(id:number){

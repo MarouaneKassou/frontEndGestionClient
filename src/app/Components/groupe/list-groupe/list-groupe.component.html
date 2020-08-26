@@ -1,1 +1,27 @@
-<p>list-groupe works!</p>
+
+<h1>list-groupe</h1>
+
+<table  class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>user</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let groupe of groupes">
+            <td>{{groupe.id}}</td>
+            <td>{{groupe.nom}}</td>
+            <td *ngIf="groupe.idUserNavigation != undefined">{{groupe.idUserNavigation.nom}}</td>
+            <td *ngIf="groupe.idUserNavigation == undefined"></td>
+            <td>
+                <li class="btn btn-danger" (click)="deleteGroupe(groupe)">Delete</li>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+</table>
+

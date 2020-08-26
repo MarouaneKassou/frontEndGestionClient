@@ -5,7 +5,7 @@
           <div class="card-header bg-white border-0">
             <div class="row align-items-center">
               <div class="col-8">
-                <h3 class="mb-0">New Utilisateur</h3>
+                <h3 class="mb-0">New Client</h3>
               </div>
             </div>
           </div>
@@ -50,6 +50,7 @@
                         <input type="text"  class="form-control form-control-alternative" placeholder="Adresse" formControlName="adresse">
                       </div>
                       <div class="form-group">
+                        <label class="form-control-label">Groupe</label>
                         <select formControlName="Groupe" class="form-control" name=Groupe>
                           <option *ngFor="let groupe of Groupes" [ngValue]="groupe">{{groupe.nom}}</option>
                         </select>

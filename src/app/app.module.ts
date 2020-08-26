@@ -28,6 +28,10 @@ import { AddRendezVousComponent } from './Components/rendez-vous/add-rendez-vous
 import { ListRendezVousComponent } from './Components/rendez-vous/list-rendez-vous/list-rendez-vous.component';
 import { SearchClientComponent } from './Components/client/search-client/search-client.component';
 import { SearchDocumentComponent } from './Components/document/search-document/search-document.component';
+import { ClientService } from './services/client.service';
+import { GroupeService } from './services/groupe.service';
+import { RendezVousService } from './services/rendez-vous.service';
+import { LoginComponent } from './Components/auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,8 @@ import { SearchDocumentComponent } from './Components/document/search-document/s
     AddRendezVousComponent,
     ListRendezVousComponent,
     SearchClientComponent,
-    SearchDocumentComponent
+    SearchDocumentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -60,7 +65,7 @@ import { SearchDocumentComponent } from './Components/document/search-document/s
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [RoleService,UserService],
+  providers: [RoleService,UserService,ClientService,GroupeService,RendezVousService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

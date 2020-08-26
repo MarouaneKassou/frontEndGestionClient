@@ -1,1 +1,38 @@
-<p>list-client works!</p>
+
+<h1>list-Client</h1>
+
+<table  class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cin</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+            <th>Adresse</th>
+            <th>Telephone</th>
+            <th>Groupe</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td>{{client.id}}</td>
+            <td>{{client.cin}}</td>
+            <td>{{client.nom}}</td>
+            <td>{{client.prenom}}</td>
+            <td>{{client.email}}</td>
+            <td>{{client.adresse}}</td>
+            <td>{{client.telephone}}</td>
+            <td *ngIf="client.idGroupeNavigation != undefined">{{client.idGroupeNavigation.nom}}</td>
+            <td *ngIf="client.idGroupeNavigation == undefined"></td>
+            <td>
+                <li class="btn btn-danger" (click)="deleteClient(client)">Delete</li>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+</table>
+

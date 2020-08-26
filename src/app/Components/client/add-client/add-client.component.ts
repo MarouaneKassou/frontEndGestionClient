@@ -45,11 +45,11 @@ export class AddClientComponent implements OnInit {
       telephone: new FormControl('', Validators.required),
       adresse: new FormControl('', Validators.required),
       Groupe: new FormControl('', Validators.required),
-      Rendez_vous: new FormControl('', Validators.required)
+      Rendez_vous: new FormControl('')
     });
    }
 
-    onsubmit() {
+   onSubmit() {
       const client = new Client();
       client.cin = this.clientForm.get('cin').value;
       client.nom = this.clientForm.get('nom').value;
